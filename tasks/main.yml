@@ -1,0 +1,12 @@
+---
+# tasks file for vmg
+
+- name: Generating libvirt configuration manifest
+  template:
+    src: templates/libvirt.j2
+    dest: '{{ vmg_nw_file_path }}'
+
+- name: Generating cloud_init VM manifest
+  template:
+    src: templates/vm_info.j2
+    dest: '{{ vmg_vm_file_path }}'
