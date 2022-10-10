@@ -41,6 +41,12 @@ cloud_vms_info:
     vm_dns_search_domain: '{{ vmg_vm_domain }}'
     vm_dns1: {{ vmg_nw_gateway }}
     vm_nm_controlled_network: {{ vmg_vm_nm_controlled_network }} 
+{% if vm_data.value.additional_disks is defined %}
+    vm_additional_disks: {{ vm_data.value.additional_disks }}
+{% endif %}
+{% if vm_data.value.additional_nics is defined %}
+    vm_additional_nics: {{ vm_data.value.additional_nics }}
+{% endif %}
 {% set cnt.value = cnt.value + 1 %}
 {% endfor %}
 {% endfor %}
