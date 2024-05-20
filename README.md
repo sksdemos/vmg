@@ -53,6 +53,8 @@ In the above example the dictionary ***vmg_vms_infra*** has two keys **workstati
 | vmg_vm_domain | Domain name used to create a VMs FQDN and for DNS requirements |
 | vmg_vm_image_link | URL for a specific cloud image |
 | vmg_vm_root_passwd | Password to set for the root user during the cloud-init process |
+| vmg_vm_custom_cloud_user | Optional custom cloud user to be created during cloud-init process. Password access will be locked. User is sudo enabled |
+| vmg_vm_ssh_authorized_keys | List of ssh public keys installed for the root and custom cloud user created during the cloud-init process |
 | vmg_vm_os_variant | Variant of the OS being installed. Run the **virt-install --os-variant list** command to see a set of supported OS variants. |
 | vmg_vm_first_ip | Creates a static IP by setting the last octet start range for VMs IP address. Example, if the vmg_vm_network was 10.0.0.0 and if vmg_vm_first_ip is 10 then the first VM will get a static IP address of 10.0.0.10 and the second VM will get an IP address of 10.0.0.11 and so on |
 | vmg_vm_network | Network for the VM infrastructure |

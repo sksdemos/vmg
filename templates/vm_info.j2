@@ -30,6 +30,12 @@ cloud_vms_info:
     vm_fqdn: {{ vm_data.value.hostname_spec }}{% if vm_data.value.alphabet == False %}{{ ctr+1}}{% else %}{{vmg_alphabets[ctr]}}{% endif %}.{{ vmg_vm_domain }}
 {% endif %}
     vm_root_passwd: {{ vmg_vm_root_passwd }}
+{% if vmg_vm_custom_cloud_user is defined %}
+    vm_custom_cloud_user: {{ vmg_vm_custom_cloud_user }}
+{% endif %}
+{% if vmg_vm_ssh_authorized_keys is defined %}
+    vm_ssh_authorized_keys: {{ vmg_vm_ssh_authorized_keys }}
+{% endif %}
     vm_os_type: linux
     vm_os_variant: {{ vmg_vm_os_variant }}
     vm_memory: {{ vm_data.value.memory }}
